@@ -1,0 +1,163 @@
+.button:focus {
+  background-color: green;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.videoContainer {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 40px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), transparent);
+  z-index: 10;
+}
+
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 40px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.timelineContainer {
+  width: 100%;
+  margin-bottom: 35px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.timeInfo {
+  color: white;
+  font-size: 22px;
+  min-width: 75px;
+  font-weight: 500;
+}
+
+.timeline {
+  flex: 1;
+  height: 7px;
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  position: relative;
+  border-radius: 3.5px;
+}
+
+.timeline:hover {
+  height: 9px;
+}
+
+.timelineProgress {
+  position: absolute;
+  height: 100%;
+  background-color: white;
+  border-radius: 3.5px;
+  transition: width 0.1s linear;
+}
+
+.timeDisplay {
+  color: white;
+  font-size: 16px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  margin-top: 15px;
+}
+
+.playButton {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 55px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.playButton:hover,
+.playButton:focus {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.skipButton {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 5px;
+}
+
+.skipButton:hover,
+.skipButton:focus {
+  transform: scale(1.1);
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.backButton {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 20px;
+  font-size: 32px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.backButton:hover,
+.backButton:focus {
+  opacity: 0.8;
+}
