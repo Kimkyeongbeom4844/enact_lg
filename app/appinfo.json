@@ -1,13 +1,12 @@
 {
-    "id": "com.ideaconcert.kb",
-    "version": "1.0.0",
-    "vendor": "My Company",
-    "type": "web",
-    "main": "index.html",
-    "title": "kb",
-    "icon": "icon.png",
-    "requiredPermissions": [
-        "time.query",
-        "activity.operation"
-    ]
+  "id": "com.ideaconcert.kb",
+  "version": "1.0.0",
+  "vendor": "My Company",
+  "type": "web",
+  "main": "index.html",
+  "title": "kb",
+  "icon": "icon.png",
+  "supportPortraitMode": true,
+  "supportTouchMode": "virtual",
+  "requiredPermissions": ["time.query", "activity.operation"]
 }

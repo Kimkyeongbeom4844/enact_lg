@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import path from "./reducers/path";
+import device from "./reducers/device";
 
 export const store = configureStore({
   reducer: {
-    path,
+    device,
   },
 
   middleware: (getDefaultMiddleware) =>

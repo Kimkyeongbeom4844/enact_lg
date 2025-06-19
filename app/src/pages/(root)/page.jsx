@@ -1,10 +1,10 @@
 import React from "react";
 import Spottable from "@enact/spotlight/Spottable";
-import spotlight from "@enact/spotlight";
 import { useNavigate } from "react-router-dom";
 import styles from "./page.module.css";
 import { DefaultContainer } from "../../components/containers/DefaultContainer";
 import { FocusDefaultContainer } from "../../components/containers/FocusDefaultContainer";
+import { useSelector } from "react-redux";
 
 const Button = Spottable("button");
 
@@ -12,6 +12,7 @@ const sampleButtonList = Array.from({ length: 10 }, (_, index) => index + 1);
 
 const MainPanel = () => {
   const navigate = useNavigate();
+  const deviceStore = useSelector((state) => state.device);
 
   return (
     <>
@@ -47,6 +48,20 @@ const MainPanel = () => {
           </Button>
         ))}
       </FocusDefaultContainer>
+      <div
+        style={{
+          color: "green",
+        }}
+      >
+        {deviceStore.width}x{deviceStore.height}
+      </div>
+      <div
+        style={{
+          color: "green",
+        }}
+      >
+        {deviceStore.orientation}
+      </div>
     </>
   );
 };
