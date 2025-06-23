@@ -7,6 +7,6 @@
   "title": "kb",
   "icon": "icon.png",
   "supportPortraitMode": true,
-  "supportTouchMode": "virtual",
+  "supportTouchMode": "full",
   "requiredPermissions": ["time.query", "activity.operation"]
 }

@@ -5,6 +5,8 @@ import styles from "./page.module.css";
 import { DefaultContainer } from "../../components/containers/DefaultContainer";
 import { FocusDefaultContainer } from "../../components/containers/FocusDefaultContainer";
 import { useSelector } from "react-redux";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
 
 const Button = Spottable("button");
 
@@ -55,13 +57,39 @@ const MainPanel = () => {
       >
         {deviceStore.width}x{deviceStore.height}
       </div>
-      <div
-        style={{
-          color: "green",
+      <div className="text-danger">{deviceStore.orientation}</div>
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        onTouchEnd={(swiper) => {
+          console.log(swiper);
+          // 모든 슬라이드의 배경색을 빨간색으로 변경
+          const slides = swiper.slides;
+          slides.forEach((slide) => {
+            slide.style.backgroundColor = "red";
+          });
         }}
       >
-        {deviceStore.orientation}
-      </div>
+        {Array.from({ length: 10 }, (_, index) => (
+          <SwiperSlide
+            onTouchStart={(event) => {
+              event.target.style.backgroundColor = "blue";
+            }}
+            style={{ backgroundColor: "red", height: "500px" }}
+          >
+            Slide {index + 1}
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </>
   );
 };
